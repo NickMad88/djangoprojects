@@ -7,7 +7,17 @@ def new(request):
     return HttpResponse("placeholder to display a new form to create a new blog")
 
 def create(request):
-    return redirect('/blogs')
+    if request.method == "POST":
+        print "*"*50
+        print request.POST
+        print request.POST['name']
+        print request.POST['desc']
+        request.session['name'] = request.POST['name']
+        request.session['counter'] = 100
+        print "*"*50  # more on session below
+        return redirect("/")
+    else:
+        return render(request, "blogs_app/index.html/")
 
 def show(request, number):
     return HttpResponse("placeholder to display blog " + number)
