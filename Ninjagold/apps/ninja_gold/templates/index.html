@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold w/ Django</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="yourgold">
+            <br>
+            Your Gold: {{ request.session.counter }}
+            
+        </div>
+        <div class="contentbox">
+            <p class="boxtitle">Farm</p>
+            <p class="boxdescription">(earns 10-20 golds)</p>
+            <form class="find_form" action="/process_money" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="farm_form">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="contentbox">
+            <p class="boxtitle">Cave</p>
+            <p class="boxdescription">(earns 5-10 golds)</p>
+            <form class="find_form" action="/process_money" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="cave_form">
+                <input type="submit" value="Find Gold!">
+            </form> 
+        </div>
+        <div class="contentbox">
+            <p class="boxtitle">House</p>
+            <p class="boxdescription">(earns 2-5 golds)</p>
+            <form class="find_form" action="/process_money" name="house_form" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="house_form">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="contentbox">
+            <p class="boxtitle">Casino</p>
+            <p class="boxdescription">(earns/take 0-50 golds)</p>
+            <form class="find_form" action="/process_money" name="casino_form" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="casino_form">
+                <input type="submit" value="Find Gold!">
+            </form>  
+        </div>
+        <div id="activities">
+            <div id="activity_content">
+                    <p id="activitieslabel">Activities:</p>
+                        {% for dictionary in request.session.activities reversed %}
+                            <p style="color:{{ dictionary.color}}">{{dictionary.text}}</p>
+                            {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

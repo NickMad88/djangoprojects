@@ -1,0 +1,82 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 900px;
+    height: 550px;
+    background-color: white;
+}
+.contentbox{
+    width: 200px;
+    height: 200px;
+    background-color: #BAB3B3;
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    top: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#activities{
+    width: 850px;
+    height: 200px;
+    background-color: white;
+    display: block;
+    margin-left: 20px;
+    position: relative;
+    top: 35px;
+}
+#yourgold{
+    width: 175px;
+    height: 40px;
+    margin-left: 15px;
+
+    background-color: white;
+    display: block;
+}
+.boxtitle{
+    text-align: center;
+    color: black;
+    font-size: 20pt;
+    display: block;
+    position: relative;
+    top: 35px;
+}
+.boxdescription{
+    text-align: center;
+    color: black;
+    font-size: 15pt;
+    display: block;
+    position: relative;
+    top: 35px;
+    margin-top: 10pt;
+}
+.goldbutton{
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 30px;
+}
+.find_form{
+    position: relative;
+    top: 80px;
+    left: 65px;
+    display: block;
+}
+#activitieslabel{
+    text-align: left;
+    color: black;
+    display: block;
+}
+#activity_content{
+    background-color: #EAE3E3;
+    display: block;
+    width: 800px;
+    height: 250px;
+    display: block;
+    margin-left:15px;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
